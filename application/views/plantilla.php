@@ -11,7 +11,7 @@ session_start();
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Punto de Venta</title>
+  <title>Abarrotes Mary</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -40,6 +40,10 @@ session_start();
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+   <!-- DataTables -->
+  <link rel="stylesheet" href="application/views/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="application/views/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
   <!--=====================================
   PLUGINS DE JAVASCRIPT
   ======================================-->
@@ -55,6 +59,17 @@ session_start();
   
   <!-- AdminLTE App -->
   <script src="application/views/dist/js/adminlte.min.js"></script>
+
+  <!-- DataTables -->
+  <script src="application/views/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="application/views/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="application/views/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="application/views/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
+
+  <!-- SweetAlert 2 -->
+  <script src="application/views/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <!-- By default SweetAlert2 doesn't support IE. To enable IE 11 support, include Promise polyfill:-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 
 </head>
 
@@ -74,13 +89,13 @@ CUERPO DOCUMENTO
     CABEZOTE
     =============================================*/
 
-    include "modulos/cabezote.php";
+    include "application/views/modulos/cabezote.php";
 
     /*=============================================
     MENU
     =============================================*/
 
-    include "modulos/menu.php";
+    include "application/views/modulos/menu.php";
 
     /*=============================================
     CONTENIDO
@@ -98,11 +113,11 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "salir"){
 
-        include "modulos/".$_GET["ruta"].".php";
+        include "application/views/modulos/".$_GET["ruta"].".php";
 
       }else{
 
-        include "modulos/404.php";
+        include "application/views/modulos/404.php";
 
       }
 
@@ -130,5 +145,7 @@ CUERPO DOCUMENTO
 
 
 <script src="application/views/js/plantilla.js"></script>
+<script src="application/views/js/usuarios.js"></script>
+
 </body>
 </html>
